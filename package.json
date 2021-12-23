@@ -1,0 +1,19 @@
+{
+  "name": "p3_00_code",
+  "version": "1.0.0",
+  "description": "Je suis un fichier 'README'.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch sass/main.scss:style.css --style expanded"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hugo-LML/OC_P3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hugo-LML/OC_P3/issues"
+  },
+  "homepage": "https://github.com/Hugo-LML/OC_P3#readme"
+}
