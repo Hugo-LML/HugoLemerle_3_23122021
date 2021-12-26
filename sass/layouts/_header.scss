@@ -1,4 +1,18 @@
-h1
+header
 {
-    color: $primaryColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 10px;
+    position: relative;
+    i
+    {
+        position: absolute;
+        left: $margin-content-borders;
+    }
+    img
+    {
+        width: 50%;
+        object-fit: cover;
+    }
 }
