@@ -1,0 +1,30 @@
+footer
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #3a3a3a;
+    padding: 20px;
+    color: #FFF;
+    img
+    {
+        width: 100px;
+        margin-bottom: 20px;
+        filter: brightness(100);
+    }
+    p
+    {
+        margin-bottom: 10px;
+    }
+    i
+    {
+        margin-right: 10px;
+    }
+    .fa-utensils
+    {
+        margin-right: 17px;
+    }
+    .icon-and-text
+    {
+        display: flex;
+    }
+}
