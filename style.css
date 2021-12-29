@@ -357,9 +357,11 @@ header {
   padding: 20px 0 10px;
   position: relative;
 }
-header i {
+header a {
   position: absolute;
   left: 20px;
+  text-decoration: none;
+  color: initial;
 }
 header img {
   width: 50%;
@@ -380,6 +382,11 @@ footer img {
 }
 footer p {
   margin-bottom: 10px;
+  cursor: pointer;
+}
+footer a {
+  text-decoration: none;
+  color: #FFF;
 }
 footer i {
   margin-right: 10px;
@@ -391,8 +398,89 @@ footer .icon-and-text {
   display: flex;
 }
 
+.loader {
+  position: fixed;
+  z-index: 100;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top: 5px solid #9356DC;
+  border-bottom: 5px solid #9356DC;
+  animation: loading 1.5s linear forwards;
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top: 5px solid #FF79DA;
+  border-bottom: 5px solid #FF79DA;
+}
+.loader::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: 20%;
+  bottom: 20%;
+  left: 20%;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top: 5px solid #99E2D0;
+  border-bottom: 5px solid #99E2D0;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loading-effect {
+  position: relative;
+}
+.loading-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  opacity: 0.9;
+  z-index: 99;
+  animation: disappear 1.5s forwards;
+}
+@keyframes disappear {
+  0% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 header .dont-show {
-  left: -100px;
+  left: -100%;
 }
 
 .presentation {
@@ -541,6 +629,11 @@ header .dont-show {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   overflow: hidden;
+  transition: 0.3s;
+}
+.restaurants__card:hover {
+  transform: scale(1.01);
+  transition: 0.3s;
 }
 .restaurants__card__img {
   width: 100%;
@@ -581,7 +674,11 @@ header .dont-show {
   position: absolute;
   top: 0;
   left: 0;
-  color: #9356DC;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   opacity: 0;
   transition: 0.3s;
 }
@@ -615,7 +712,7 @@ header .dont-show {
   margin-top: -50px;
   background-color: #f1f1f1;
   padding: 30px 20px 60px 20px;
-  border-radius: 50px 50px 0 0;
+  border-radius: 50px 50px 0 0/40px 40px 0 0;
   position: relative;
   z-index: 1;
 }
@@ -632,6 +729,31 @@ header .dont-show {
 .menu__name i {
   font-size: 24px;
   margin-right: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.menu__name i::after {
+  content: "\f004";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0;
+  transition: 0.3s;
+}
+.menu__name i:hover {
+  color: rgba(0, 0, 0, 0);
+  transition: 0.3s;
+}
+.menu__name i:hover::after {
+  opacity: 1;
+  transition: 0.3s;
 }
 .menu__food-type {
   font-weight: 300;
@@ -651,6 +773,18 @@ header .dont-show {
   display: flex;
   flex-direction: column;
 }
+.menu__list__card:nth-child(1) {
+  animation: apparition 0.6s 0s backwards;
+}
+.menu__list__card:nth-child(2) {
+  animation: apparition 0.6s 0.2s backwards;
+}
+.menu__list__card:nth-child(3) {
+  animation: apparition 0.6s 0.4s backwards;
+}
+.menu__list__card:nth-child(4) {
+  animation: apparition 0.6s 0.6s backwards;
+}
 .menu__list__card {
   margin-top: 10px;
   padding: 10px 20px 10px 10px;
@@ -664,6 +798,16 @@ header .dont-show {
   overflow: hidden;
   transition: 0.6s;
 }
+@keyframes apparition {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .menu__list__card__check {
   position: absolute;
   top: 0;
@@ -675,6 +819,7 @@ header .dont-show {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   transition: 0.6s;
 }
 .menu__list__card__check i {
@@ -689,14 +834,23 @@ header .dont-show {
   transform: rotate(360deg);
   transition: 0.6s;
 }
+.menu__list__card:hover h4, .menu__list__card:hover p:nth-child(2) {
+  max-width: calc(100% - 50px);
+  transition: 0.6s;
+}
+.menu__list__card:hover p:nth-child(2) {
+  max-width: calc(100% - 100px);
+  transition: 0.6s;
+}
 .menu__list__card h4 {
   margin-bottom: 6px;
   flex-basis: 100%;
-  max-width: calc(100% - 50px);
+  max-width: calc(100% - 0px);
   min-width: 100px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: 0.6s;
 }
 .menu__list__card p:nth-child(2) {
   font-weight: 300;
@@ -706,6 +860,7 @@ header .dont-show {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: 0.6s;
 }
 .menu__list__card p:nth-child(3) {
   font-weight: 700;

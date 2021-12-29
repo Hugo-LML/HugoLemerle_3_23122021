@@ -5,10 +5,12 @@ header
     align-items: center;
     padding: 20px 0 10px;
     position: relative;
-    i
+    a
     {
         position: absolute;
         left: $margin-content-borders;
+        text-decoration: none;
+        color: initial;
     }
     img
     {
