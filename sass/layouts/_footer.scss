@@ -5,10 +5,22 @@ footer
     background-color: #3a3a3a;
     padding: 20px;
     color: #FFF;
+    @include tablet-only
+    {
+        padding: 20px $margin-content-borders-tablet;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    @include desktop-only
+    {
+        padding: 20px $margin-content-borders-desktop;
+    }
     img
     {
         width: 100px;
         margin-bottom: 20px;
+        margin-right: 90%;
         filter: brightness(100);
     }
     p

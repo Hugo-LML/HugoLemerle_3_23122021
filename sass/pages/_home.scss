@@ -133,9 +133,25 @@ header
 .functioning
 {
     margin: 0 $margin-content-borders;
+    @include tablet-only
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        flex-wrap: wrap;
+        margin: 0 $margin-content-borders-tablet;
+    }
+    @include desktop-only
+    {
+        margin: 0 $margin-content-borders-desktop;
+    }
     h2
     {
         margin-bottom: 30px;
+        @include tablet-only
+        {
+            flex-basis: 100%;
+        }
     }
     &__card
     {
@@ -148,6 +164,12 @@ header
         box-shadow: $box-shadow;
         position: relative;
         z-index: 1;
+        @include tablet-only
+        {
+            margin: 0 0 60px 0;
+            padding-right: 20px;
+            width: 30%;
+        }
         &__num
         {
             display: flex;
@@ -155,8 +177,8 @@ header
             align-items: center;
             background-color: $color-primary;
             border-radius: 50%;
-            width: 24px;
-            height: 24px;
+            min-width: 24px;
+            min-height: 24px;
             margin: 0 20px 0 -10px;
             p
             {
@@ -217,16 +239,34 @@ header
 
 .restaurants
 {
+    display: flex;
+    flex-direction: column;
     background-color: #f1f1f1;
     padding: 60px $margin-content-borders 60px $margin-content-borders;
+    @include tablet-only
+    {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 60px $margin-content-borders-tablet 60px $margin-content-borders-tablet;
+    }
+    @include desktop-only
+    {
+        padding: 60px $margin-content-borders-desktop 60px $margin-content-borders-desktop;
+    }
     h2
     {
         margin-bottom: 30px;
+        flex-basis: 100%;
     }
     a
     {
         text-decoration: none;
         color: initial;
+        @include tablet-only
+        {
+            width: 47.5%;
+        }
     }
     &__card
     {

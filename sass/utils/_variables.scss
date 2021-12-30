@@ -6,9 +6,13 @@ $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 
 $margin-content-borders: 20px;
+$margin-content-borders-tablet: 30px;
+$margin-content-borders-desktop: 50px;
 
 $transition-short: 0.3s;
 $transition-medium: 0.6s;
 
 $box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 $box-shadow-plus: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+$breakpoints: (tablet: 768px, desktop: 992px);
