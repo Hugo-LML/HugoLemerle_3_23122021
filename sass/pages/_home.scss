@@ -1,3 +1,4 @@
+/*LOADER*/
 .loader
 {
     position: fixed;
@@ -72,7 +73,9 @@
         }
     }
 }
+/*LOADER*/
 
+/*HEADER*/
 header
 {
     .dont-show
@@ -80,7 +83,9 @@ header
         left: -100%;
     }
 }
+/*HEADER*/
 
+/*PRESENTATION*/
 .presentation
 {
     margin-bottom: 60px;
@@ -129,7 +134,9 @@ header
         }
     }
 }
+/*PRESENTATION*/
 
+/*FUNCTIONING*/
 .functioning
 {
     margin: 0 $margin-content-borders;
@@ -236,7 +243,9 @@ header
         margin-bottom: 60px;
     }
 }
+/*FUNCTIONING*/
 
+/*RESTAURANTS*/
 .restaurants
 {
     display: flex;
@@ -341,3 +350,4 @@ header
         }
     }
 }
+/*RESTAURANTS*/
